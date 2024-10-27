@@ -9,13 +9,6 @@ My development environment setup scripts across time and space.
 - [ ] Auto-delete old log files
 - [ ] Symlinks dot-files
 
-## Oh My ZSH
-
-- [ ] Aliases
-- [ ] Functions
-- [ ] Theme
-- [ ] Plugins
-
 ## Shell
 
 - [x] Oh My ZSH
@@ -25,6 +18,18 @@ My development environment setup scripts across time and space.
 - [x] JQ
 - [x] Tree
 - [x] Watch
+
+## Oh My ZSH
+
+- [ ] Aliases
+- [ ] Functions
+- [ ] Theme
+- [ ] Plugins
+
+## VS Code
+
+- [ ] Settings
+- [ ] Extensions ...
 
 ## Cloud
 

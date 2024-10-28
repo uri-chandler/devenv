@@ -74,7 +74,6 @@ run() {
 
 
 
-
 #####################################################################################################
 #                                                                                                   #
 # Tools To Install                                                                                  #
@@ -147,21 +146,46 @@ done
 
 # Make sure Homebrew is up-to-date
 #
-echo "" | tee -a $LOG_FILE
-log "Updating Homebrew"
-if run "brew update"; then
-    ok " -> Homebrew updated successfully"
-else
-    error " -> Failed to update Homebrew (see $LOG_FILE for details)"
-fi
+# echo "" | tee -a $LOG_FILE
+# log "Updating Homebrew"
+# if run "brew update"; then
+#     ok " -> Homebrew updated successfully"
+# else
+#     error " -> Failed to update Homebrew (see $LOG_FILE for details)"
+# fi
 
 
-# Install Homebrew apps and tools from Brewfile
+# # Install Homebrew apps and tools from Brewfile
+# #
+# echo "" | tee -a $LOG_FILE
+# log "Installing apps and tools from Brewfile (this might take a while)"
+# if run "brew bundle --file=~/devenv/Brewfile"; then
+#     ok " -> Brewfile installed successfully"
+# else
+#     error " -> Failed to install Brewfile (see $LOG_FILE for details)"
+# fi
+
+
+
+# # Install Oh My ZSH Aliases & Functions
 #
 echo "" | tee -a $LOG_FILE
-log "Installing apps and tools from Brewfile (this might take a while)"
-if run "brew bundle --file=~/devenv/Brewfile"; then
-    ok " -> Brewfile installed successfully"
-else
-    error " -> Failed to install Brewfile (see $LOG_FILE for details)"
+log "Installing Oh My ZSH Aliases & Functions"
+if ! grep -Fxq "if [ -f ~/.zsh_aliases ]; then source ~/.zsh_aliases; fi" ~/.zshrc; then
+    echo "if [ -f ~/.zsh_aliases ]; then source ~/.zsh_aliases; fi" >> ~/.zshrc
 fi
+warn " -> Aliases"
+if ! grep -Fxq "if [ -f ~/.zsh_functions ]; then source ~/.zsh_functions; fi" ~/.zshrc; then
+    echo "if [ -f ~/.zsh_functions ]; then source ~/.zsh_functions; fi" >> ~/.zshrc
+fi
+warn " -> Functions"
+ok " -> Ok"
+
+
+
+# Clean up old log files, keeping only the last 5
+#
+echo "" | tee -a $LOG_FILE
+log "Cleaning up old log files"
+ls -tp setup-*.log | grep -v '/$' | tail -n +6 | xargs -I {} rm -- {}
+ok " -> Ok"

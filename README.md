@@ -6,7 +6,7 @@ My development environment setup scripts across time and space.
 
 - [x] Color logging
 - [x] Timestamped log files
-- [ ] Auto-delete old log files
+- [x] Auto-delete old log files
 - [ ] Symlinks dot-files
 
 ## Shell
@@ -21,7 +21,7 @@ My development environment setup scripts across time and space.
 
 ## Oh My ZSH
 
-- [ ] Aliases
+- [x] Aliases
 - [ ] Functions
 - [ ] Theme
 - [ ] Plugins
@@ -36,9 +36,10 @@ My development environment setup scripts across time and space.
 - [x] Minikube
 - [x] Kubernetes CLI
 - [x] Helm
-- [x] K9s
 - [x] Docker
 - [x] Ngrok
+- [x] K9s
+- [ ] K9s Config
 
 ## Coding
 

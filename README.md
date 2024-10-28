@@ -7,7 +7,8 @@ My development environment setup scripts across time and space.
 - [x] Color logging
 - [x] Timestamped log files
 - [x] Auto-delete old log files
-- [ ] Symlinks dot-files
+- [x] Symlinks dot-files
+- [ ] PlantUML with Styles
 
 ## Shell
 
@@ -21,8 +22,6 @@ My development environment setup scripts across time and space.
 
 ## Oh My ZSH
 
-- [x] Aliases
-- [ ] Functions
 - [ ] Theme
 - [ ] Plugins
 

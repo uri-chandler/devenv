@@ -103,6 +103,27 @@ TOOLS=(
 
 
 
+#####################################################################################################
+#                                                                                                   #
+# ZSH Helpers To Install                                                                            #
+#                                                                                                   #
+#####################################################################################################
+
+# Each helper will be installed by sourcing it in the .zshrc file
+# and linking it to the .zsh_helpers directory
+# Syntax: ".zsh_<TOOL_NAME>_helper"
+ZSH_HELPERS=(
+    "cloud"
+    "docker"
+    "git"
+    "npm"
+    "shell"
+)
+
+
+
+
+
 
 #####################################################################################################
 #                                                                                                   #
@@ -167,19 +188,27 @@ done
 
 
 
-# # Install Oh My ZSH Aliases & Functions
+# Iterate over the list of ZSH_HELPERS and check/install each one
 #
-echo "" | tee -a $LOG_FILE
-log "Installing Oh My ZSH Aliases & Functions"
-if ! grep -Fxq "if [ -f ~/.zsh_aliases ]; then source ~/.zsh_aliases; fi" ~/.zshrc; then
-    echo "if [ -f ~/.zsh_aliases ]; then source ~/.zsh_aliases; fi" >> ~/.zshrc
-fi
-warn " -> Aliases"
-if ! grep -Fxq "if [ -f ~/.zsh_functions ]; then source ~/.zsh_functions; fi" ~/.zshrc; then
-    echo "if [ -f ~/.zsh_functions ]; then source ~/.zsh_functions; fi" >> ~/.zshrc
-fi
-warn " -> Functions"
-ok " -> Ok"
+for helper in "${ZSH_HELPERS[@]}"; do
+
+    # Line break for better readability
+    echo "" | tee -a $LOG_FILE
+    log "Helper: ${CYAN}$helper.zsh"
+
+    warn " -> Sourcing"
+    if ! grep -Fxq "if [ -f ~/$helper.zsh ]; then source ~/$helper.zsh; fi" ~/.zshrc; then
+        echo "if [ -f ~/$helper.zsh ]; then source ~/$helper.zsh; fi" >> ~/.zshrc
+    fi
+
+    warn " -> Linking"
+    if [ ! -f ~/$helper.zsh ]; then
+        ln -sf ~/devenv/zsh_helpers/$helper.zsh ~/$helper.zsh
+    fi
+
+    ok " -> Ok"
+done
+
 
 
 

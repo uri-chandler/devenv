@@ -8,3 +8,4 @@ alias stash='git --no-pager stash'
 alias dockers='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}"'
 alias mongosh='docker run -it --rm mongosh mongosh'
 alias gitl="git log --graph --abbrev-commit --decorate --pretty=format:'%h - %an : %s'"
+alias gc='gcloud compute'

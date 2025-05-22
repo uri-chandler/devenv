@@ -118,6 +118,7 @@ ZSH_HELPERS=(
     "git"
     "npm"
     "shell"
+    "work"
 )
 
 
@@ -167,24 +168,24 @@ done
 
 # Make sure Homebrew is up-to-date
 #
-# echo "" | tee -a $LOG_FILE
-# log "Updating Homebrew"
-# if run "brew update"; then
-#     ok " -> Homebrew updated successfully"
-# else
-#     error " -> Failed to update Homebrew (see $LOG_FILE for details)"
-# fi
+echo "" | tee -a $LOG_FILE
+log "Updating Homebrew"
+if run "brew update"; then
+    ok " -> Homebrew updated successfully"
+else
+    error " -> Failed to update Homebrew (see $LOG_FILE for details)"
+fi
 
 
-# # Install Homebrew apps and tools from Brewfile
-# #
-# echo "" | tee -a $LOG_FILE
-# log "Installing apps and tools from Brewfile (this might take a while)"
-# if run "brew bundle --file=~/devenv/Brewfile"; then
-#     ok " -> Brewfile installed successfully"
-# else
-#     error " -> Failed to install Brewfile (see $LOG_FILE for details)"
-# fi
+# Install Homebrew apps and tools from Brewfile
+#
+echo "" | tee -a $LOG_FILE
+log "Installing apps and tools from Brewfile (this might take a while)"
+if run "brew bundle --file=~/devenv/Brewfile"; then
+    ok " -> Brewfile installed successfully"
+else
+    error " -> Failed to install Brewfile (see $LOG_FILE for details)"
+fi
 
 
 

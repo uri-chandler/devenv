@@ -1,6 +1,6 @@
 # devenv
 
-My development environment setup scripts across time and space.
+My development setup scripts across time and space.
 
 ## Features
 
@@ -12,18 +12,35 @@ My development environment setup scripts across time and space.
 
 ## Shell
 
-- [x] Oh My ZSH
-- [x] Warp Terminal
-- [x] Homebrew
-- [x] FFMPEG
-- [x] JQ
-- [x] Tree
-- [x] Watch
+### Tools
 
-## Oh My ZSH
+- [x] [Oh My ZSH](https://ohmyz.sh/)
+- [x] [Warp Terminal](https://www.warp.dev/)
+- [x] [Homebrew](https://brew.sh/)
+- [x] [ffmpeg](https://www.ffmpeg.org/)
+- [x] [jq](https://jqlang.github.io/jq/)
+- [x] [tree](https://formulae.brew.sh/formula/tree#default)
+- [x] [watch](https://formulae.brew.sh/formula/watch#default)
 
-- [ ] Theme
-- [ ] Plugins
+### Aliases & Functions
+
+- [x] `rmf`
+Remove a file or folder without asking [y/n]
+
+- [x] `cdp [project-name]`
+Assert and CD into the `~/projects` or `~/projects/project-name` folder
+
+- [x] `mkcd`
+Create a folder and CD into it in one go
+
+- [x] `aliases`
+Opens the `zsh_helpers` folder in VS Code
+
+### Oh My ZSH
+
+- [ ] Theme af-magic
+- [ ] Auto-update enabled
+- [ ] Plugins with zinit
 
 ## VS Code
 

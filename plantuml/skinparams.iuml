@@ -1,0 +1,74 @@
+' @startuml stylesheet
+
+!define Blue1 #eaf2fb
+!define Blue2 #d9e6f2
+!define Blue3 #a9c5eb
+!define Blue4 #7fa2e1
+!define Blue5 #557fd0
+!define BLUE(txt) <color:Blue5>txt</color>
+
+!define Red1 #FFE5E5
+!define Red2 #FFCCCC
+!define Red3 #FF9999
+!define Red4 #FF6666
+!define Red5 #FF3333
+!define RED(txt) <color:Red5>txt</color>
+
+!define Green1 #E6F2E6
+!define Green2 #CCEBCC
+!define Green3 #99D699
+!define Green4 #66C266
+!define Green5 #33AD33
+!define GREEN(txt) <color:Green5>txt</color>
+
+!define Orange1 #FFF0E5
+!define Orange2 #FFE6CC
+!define Orange3 #FFCC99
+!define Orange4 #FFB266
+!define Orange5 #FF9933
+!define ORANGE(txt) <color:Orange5>txt</color>
+
+!define Gray1 #F2F2F2
+!define Gray2 #D9D9D9
+!define Gray3 #BFBFBF
+!define Gray4 #A6A6A6
+!define Gray5 #8C8C8C
+!define GRAY(txt) <color:Gray5>txt</color>
+
+!define Purple1 #EDE5FF
+!define Purple2 #D9CCFF
+!define Purple3 #B399FF
+!define Purple4 #8C66FF
+!define Purple5 #6633FF
+!define PURPLE(txt) <color:Purple5>txt</color>
+
+!define Yellow1 #FFFDE5
+!define Yellow2 #FFFACC
+!define Yellow3 #FFF599
+!define Yellow4 #FFF266
+!define Yellow5 #FFEF33
+!define YELLOW(txt) <color:Yellow5>txt</color>
+
+'Returns text styled as a code snippet
+!define CODE(txt) <font:Courier><color:Gray5>txt</color></font>
+
+'Returns text styled as a code snippet, allowing for color customization
+!define CODEC(txt, clr) <font:Courier><color:clr>txt</color></font>
+
+'Returns a green "<<OK>>" text styled as a code snippet
+!define OK() CODEC(<<OK>>, Green5)
+
+'Returns a colored text styled
+!define COLOR(txt, clr) <color:clr>txt</color>
+
+'Returns bold test
+!define BOLD(txt) <b>txt</b>
+
+
+skinparam SequenceLifeLineBackgroundColor Blue2
+skinparam SequenceArrowColor Blue4
+skinparam LegendBackgroundColor Yellow1
+skinparam SequenceDividerBackgroundColor Yellow1
+
+
+' @enduml

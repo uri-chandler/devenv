@@ -1,6 +1,9 @@
+# In your .zshrc or .bashrc
+# alias brew='brew "$@" && (cd /path/to/your/brewfile/repo && brew bundle dump --force && git commit -am "Update Brewfile" && git push)'
+
 alias rmf='rm -rf'
 alias notes='code ~/notes'
-alias aliases='code ~/.zsh_aliases'
+alias aliases='code ~/devenv/zsh_helpers'
 
 
 

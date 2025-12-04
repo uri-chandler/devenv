@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Nord",
+    "workbench.startupEditor": "none",
+    "python.createEnvironment.trigger": "off",
+    "python-envs.pythonProjects": [],
+    "editor.wordWrap": "on",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "explorer.confirmDelete": false
+}

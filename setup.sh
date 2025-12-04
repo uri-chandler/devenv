@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 #####################################################################################################
 #                                                                                                   #
@@ -117,6 +118,7 @@ ZSH_HELPERS=(
     "docker"
     "git"
     "npm"
+    "python"
     "shell"
     "work"
 )
@@ -219,3 +221,4 @@ echo "" | tee -a $LOG_FILE
 log "Cleaning up old log files"
 ls -tp setup-*.log | grep -v '/$' | tail -n +6 | xargs -I {} rm -- {}
 ok " -> Ok"
+echo "" | tee -a $LOG_FILE

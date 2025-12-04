@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+DEVENV_DIR="$HOME/devenv"
+cd "$DEVENV_DIR"
+
 #####################################################################################################
 #                                                                                                   #
 # Logging Helpers                                                                                   #
@@ -212,6 +215,25 @@ for helper in "${ZSH_HELPERS[@]}"; do
     ok " -> Ok"
 done
 
+
+# Update VSCode settings and keybindings
+#
+echo "" | tee -a $LOG_FILE
+log "Updating VSCode settings and keybindings"
+
+VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
+if run "cp -f \"$DEVENV_DIR/vscode/settings.json\" \"$VSCODE_SETTINGS\""; then
+    ok " -> VSCode settings setup successfully"
+else
+    error " -> Failed to update VSCode settings and keybindings (see $LOG_FILE for details)"
+fi
+
+VSCODE_KEYBINDINGS="$HOME/Library/Application Support/Code/User/keybindings.json"
+if run "cp -f \"$DEVENV_DIR/vscode/keybindings.json\" \"$VSCODE_KEYBINDINGS\""; then
+    ok " -> VSCode keybindings setup successfully"
+else
+    error " -> Failed to update VSCode keybindings (see $LOG_FILE for details)"
+fi
 
 
 

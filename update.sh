@@ -15,7 +15,6 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 LOG_FILE="update-${TIMESTAMP}.log"
 touch $LOG_FILE
 
-
 # Define color codes
 RESET="\033[0m"
 CYAN="\033[1;36m"

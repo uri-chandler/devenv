@@ -1,5 +1,3 @@
-' @startuml stylesheet
-
 !define Blue1 #eaf2fb
 !define Blue2 #d9e6f2
 !define Blue3 #a9c5eb
@@ -64,11 +62,11 @@
 'Returns bold test
 !define BOLD(txt) <b>txt</b>
 
-
+skinparam backgroundColor transparent
 skinparam SequenceLifeLineBackgroundColor Blue2
 skinparam SequenceArrowColor Blue4
 skinparam LegendBackgroundColor Yellow1
 skinparam SequenceDividerBackgroundColor Yellow1
-
-
-' @enduml
+skinparam ActivityBackgroundColor Yellow1
+skinparam UsecaseBackgroundColor Yellow1
+skinparam ActorStyle awesome

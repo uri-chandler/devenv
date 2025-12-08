@@ -5,5 +5,10 @@
     "python-envs.pythonProjects": [],
     "editor.wordWrap": "on",
     "github.copilot.nextEditSuggestions.enabled": true,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    "markdown-preview-enhanced.plantumlServer": "http://localhost:9876/svg",
+    "markdown-preview-enhanced.revealjsTheme": "league.css",
+    "markdown-preview-enhanced.enablePreviewZenMode": true
 }

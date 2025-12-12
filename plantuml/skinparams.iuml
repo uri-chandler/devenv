@@ -62,6 +62,10 @@
 'Returns bold test
 !define BOLD(txt) <b>txt</b>
 
+'Common styles for all diagrams
+!define SYSTEM(txt) CODE(<<txt>>)
+!define ARTIFACT(txt) CODEC(<<txt>>, Blue5)
+
 skinparam backgroundColor transparent
 skinparam SequenceLifeLineBackgroundColor Blue2
 skinparam SequenceArrowColor Blue4

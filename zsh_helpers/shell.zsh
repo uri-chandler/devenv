@@ -18,12 +18,13 @@ mkcd() { mkdir -p "$1" && cd "$1" }
 # If a project name is provided, create a directory for it
 # and cd into it.
 #
-cdp() {
-  mkdir -p ~/projects
+cdp () {
+    local base="$HOME/projects"
+    mkdir -p "$base" || return
 
-  if [ -z "$1" ]; then
-    cd ~/projects
-  else
-    mkdir -p "~/projects/$1" && cd "~/projects/$1"
-  fi
+    if [ -z "${1//[[:space:]]/}" ]; then
+        cd "$base" || return
+    else
+        mkdir -p "$base/$1" && cd "$base/$1" || return
+    fi
 }

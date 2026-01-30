@@ -1,0 +1,6 @@
+@startuml Diagram Styles
+
+!include diagram-styles/messages.iuml
+!include diagram-styles/sequence.iuml
+
+@enduml

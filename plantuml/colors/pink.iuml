@@ -1,0 +1,20 @@
+@startuml Pink Colors
+
+!$Pink0 = "#FFF5FA"
+!$Pink1 = "#FCE4EC"
+!$Pink2 = "#F8BBD0"
+!$Pink3 = "#F48FB1"
+!$Pink4 = "#F06292"
+!$Pink5 = "#D81B60"
+!$Pink6 = "#880E4F"
+
+!$Pink_Gradient0 = $Pink0 + "/" + %substr($Pink1, 1)
+!$Pink_Gradient1 = $Pink1 + "/" + %substr($Pink3, 1)
+!$Pink_Gradient2 = $Pink2 + "/" + %substr($Pink4, 1)
+!$Pink_Gradient3 = $Pink3 + "/" + %substr($Pink5, 1)
+
+!function $PINK($txt)
+  !return "<color:" + $Pink5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Gray Colors
+
+!$Gray0 = "#FAFAFA"
+!$Gray1 = "#F2F2F2"
+!$Gray2 = "#D9D9D9"
+!$Gray3 = "#BFBFBF"
+!$Gray4 = "#A6A6A6"
+!$Gray5 = "#8C8C8C"
+!$Gray6 = "#424242"
+
+!$Gray_Gradient0 = $Gray0 + "/" + %substr($Gray1, 1)
+!$Gray_Gradient1 = $Gray1 + "/" + %substr($Gray3, 1)
+!$Gray_Gradient2 = $Gray2 + "/" + %substr($Gray4, 1)
+!$Gray_Gradient3 = $Gray3 + "/" + %substr($Gray5, 1)
+
+!function $GRAY($txt)
+  !return "<color:" + $Gray5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

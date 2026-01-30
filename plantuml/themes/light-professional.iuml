@@ -1,0 +1,115 @@
+@startuml Light-Professional Theme
+
+' --- PRIMARY, SECONDARY, & ALTERNATE COLORS ---
+!$PrimaryColor              = "$Slate"
+!$PrimaryFontColor          = $GetColorShade($PrimaryColor, "5")
+!$PrimaryBorderColor        = $GetColorShade($PrimaryColor, "3")
+!$PrimaryBackgroundColor    = $GetColorShade($PrimaryColor, "0")
+
+!$SecondaryColor            = "$Steel"
+!$SecondaryFontColor        = $GetColorShade($SecondaryColor, "5")
+!$SecondaryLineColor        = $GetColorShade($SecondaryColor, "3")
+!$SecondaryBorderColor      = $GetColorShade($SecondaryColor, "5")
+!$SecondaryGradientColor    = $GetColorShade($SecondaryColor, "0")
+!$SecondaryBackgroundColor  = $GetColorShade($SecondaryColor, "1")
+
+!$AlternateColor            = "$Olive"
+!$AlternateFontColor        = $GetColorShade($AlternateColor, "5")
+!$AlternateLineColor        = $GetColorShade($AlternateColor, "5")
+!$AlternateBackgroundColor  = $GetColorShade($AlternateColor, "2")
+
+
+' --- STATUS & LOGIC (Events / Groups) ---
+!$StatusDefaultColor            = "$Blue"
+!$StatusDefaultLineColor        = $GetColorShade($StatusDefaultColor, "5")
+!$StatusDefaultFontColor        = $GetColorShade($StatusDefaultColor, "1")
+!$StatusDefaultArrowColor       = $GetColorShade($StatusDefaultColor, "6")
+!$StatusDefaultBackgroundColor  = $GetColorShade($StatusDefaultColor, "2")
+
+!$StatusSuccessColor            = "$Olive"
+!$StatusSuccessLineColor        = $GetColorShade($StatusSuccessColor, "5")
+!$StatusSuccessFontColor        = $GetColorShade($StatusSuccessColor, "1")
+!$StatusSuccessArrowColor       = $GetColorShade($StatusSuccessColor, "6")
+!$StatusSuccessBackgroundColor  = $GetColorShade($StatusSuccessColor, "2")
+
+!$StatusErrorColor              = "$Coral"
+!$StatusErrorLineColor          = $GetColorShade($StatusErrorColor, "5")
+!$StatusErrorFontColor          = $GetColorShade($StatusErrorColor, "1")
+!$StatusErrorArrowColor         = $GetColorShade($StatusErrorColor, "6")
+!$StatusErrorBackgroundColor    = $GetColorShade($StatusErrorColor, "2")
+
+!$StatusWarningColor            = "$Orange"
+!$StatusWarningLineColor        = $GetColorShade($StatusWarningColor, "5")
+!$StatusWarningFontColor        = $GetColorShade($StatusWarningColor, "1")
+!$StatusWarningArrowColor       = $GetColorShade($StatusWarningColor, "6")
+!$StatusWarningBackgroundColor  = $GetColorShade($StatusWarningColor, "2")
+
+!$StatusInfoColor               = "$Steel"
+!$StatusInfoLineColor           = $GetColorShade($StatusInfoColor, "5")
+!$StatusInfoFontColor           = $GetColorShade($StatusInfoColor, "1")
+!$StatusInfoArrowColor          = $GetColorShade($StatusInfoColor, "6")
+!$StatusInfoBackgroundColor     = $GetColorShade($StatusInfoColor, "2")
+
+!$StatusCriticalColor           = "$Crimson"
+!$StatusCriticalLineColor       = $GetColorShade($StatusCriticalColor, "5")
+!$StatusCriticalFontColor       = $GetColorShade($StatusCriticalColor, "1")
+!$StatusCriticalArrowColor      = $GetColorShade($StatusCriticalColor, "6")
+!$StatusCriticalBackgroundColor = $GetColorShade($StatusCriticalColor, "2")
+
+!$StatusInternalColor           = "$Slate"
+!$StatusInternalLineColor       = $GetColorShade($StatusInternalColor, "5")
+!$StatusInternalFontColor       = $GetColorShade($StatusInternalColor, "1")
+!$StatusInternalArrowColor      = $GetColorShade($StatusInternalColor, "6")
+!$StatusInternalBackgroundColor = $GetColorShade($StatusInternalColor, "2")
+
+!$StatusLoopColor               = "$Mint"
+!$StatusLoopLineColor           = $GetColorShade($StatusLoopColor, "5")
+!$StatusLoopFontColor           = $GetColorShade($StatusLoopColor, "1")
+!$StatusLoopArrowColor          = $GetColorShade($StatusLoopColor, "6")
+!$StatusLoopBackgroundColor     = $GetColorShade($StatusLoopColor, "2")
+
+
+
+' --- ARCHITECTURAL LAYERS (Structural / Boxes) ---
+!$LayerDefaultColor                 = "$Steel"
+!$LayerDefaultFontColor             = $GetColorShade($StatusDefaultColor, "5")
+!$LayerDefaultBackgroundColor       = $GetGradientShade($LayerDefaultColor)
+
+!$LayerSecurityColor                = "$Crimson"
+!$LayerSecurityFontColor            = $GetColorShade($LayerSecurityColor, "5")
+!$LayerSecurityBackgroundColor      = $GetGradientShade($LayerSecurityColor)
+
+!$LayerInternalColor                = "$Brown"
+!$LayerInternalFontColor            = $GetColorShade($LayerInternalColor, "5")
+!$LayerInternalBackgroundColor      = $GetGradientShade($LayerInternalColor)
+
+!$LayerExternalColor                = "$Mint"
+!$LayerExternalFontColor            = $GetColorShade($LayerExternalColor, "5")
+!$LayerExternalBackgroundColor      = $GetGradientShade($LayerExternalColor)
+
+!$LayerPresentationColor            = "$Indigo"
+!$LayerPresentationFontColor        = $GetColorShade($LayerPresentationColor, "5")
+!$LayerPresentationBackgroundColor  = $GetGradientShade($LayerPresentationColor)
+
+!$LayerNetworkColor                 = "$Steel"
+!$LayerNetworkFontColor             = $GetColorShade($LayerNetworkColor, "5")
+!$LayerNetworkBackgroundColor       = $GetGradientShade($LayerNetworkColor)
+
+!$LayerBusinessColor                = "$Purple"
+!$LayerBusinessFontColor            = $GetColorShade($LayerBusinessColor, "5")
+!$LayerBusinessBackgroundColor      = $GetGradientShade($LayerBusinessColor)
+
+!$LayerMessagingColor               = "$Orange"
+!$LayerMessagingFontColor           = $GetColorShade($LayerMessagingColor, "5")
+!$LayerMessagingBackgroundColor     = $GetGradientShade($LayerMessagingColor)
+
+!$LayerDataColor                    = "$Blue"
+!$LayerDataFontColor                = $GetColorShade($LayerDataColor, "5")
+!$LayerDataBackgroundColor          = $GetGradientShade($LayerDataColor)
+
+!$LayerObservabilityColor           = "$Olive"
+!$LayerObservabilityFontColor       = $GetColorShade($LayerObservabilityColor, "5")
+!$LayerObservabilityBackgroundColor = $GetGradientShade($LayerObservabilityColor)
+
+
+@enduml

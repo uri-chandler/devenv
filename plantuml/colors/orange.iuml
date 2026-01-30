@@ -1,0 +1,20 @@
+@startuml Orange Colors
+
+!$Orange0 = "#FFF9F3"
+!$Orange1 = "#FFF0E5"
+!$Orange2 = "#FFE6CC"
+!$Orange3 = "#FFCC99"
+!$Orange4 = "#FFB266"
+!$Orange5 = "#FF9933"
+!$Orange6 = "#E65100"
+
+!$Orange_Gradient0 = $Orange0 + "/" + %substr($Orange1, 1)
+!$Orange_Gradient1 = $Orange1 + "/" + %substr($Orange3, 1)
+!$Orange_Gradient2 = $Orange2 + "/" + %substr($Orange4, 1)
+!$Orange_Gradient3 = $Orange3 + "/" + %substr($Orange5, 1)
+
+!function $ORANGE($txt)
+  !return "<color:" + $Orange5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

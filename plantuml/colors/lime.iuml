@@ -1,0 +1,20 @@
+@startuml Lime Colors
+
+!$Lime0 = "#FEFFF4"
+!$Lime1 = "#F9FBE7"
+!$Lime2 = "#F0F4C3"
+!$Lime3 = "#DCE775"
+!$Lime4 = "#C0CA33"
+!$Lime5 = "#827717"
+!$Lime6 = "#4E342E"
+
+!$Lime_Gradient0 = $Lime0 + "/" + %substr($Lime1, 1)
+!$Lime_Gradient1 = $Lime1 + "/" + %substr($Lime3, 1)
+!$Lime_Gradient2 = $Lime2 + "/" + %substr($Lime4, 1)
+!$Lime_Gradient3 = $Lime3 + "/" + %substr($Lime5, 1)
+
+!function $LIME($txt)
+  !return "<color:" + $Lime5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

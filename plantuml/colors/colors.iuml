@@ -1,0 +1,46 @@
+@startuml Colors
+
+!include colors/blue.iuml
+!include colors/red.iuml
+!include colors/green.iuml
+!include colors/orange.iuml
+!include colors/gray.iuml
+!include colors/purple.iuml
+!include colors/yellow.iuml
+!include colors/teal.iuml
+!include colors/pink.iuml
+!include colors/indigo.iuml
+!include colors/brown.iuml
+!include colors/slate.iuml
+!include colors/lime.iuml
+!include colors/amber.iuml
+!include colors/mint.iuml
+!include colors/coral.iuml
+!include colors/lavender.iuml
+!include colors/olive.iuml
+!include colors/crimson.iuml
+!include colors/steel.iuml
+
+' Returns a color shade
+' Usage: $GetColorShade($Steel, "5") -> Returns value of $Steel5
+!function $GetColorShade($token, $shade="1")
+  !return %get_variable_value($token + $shade)
+!endfunction
+
+' Returns a color gradient shade
+' Usage: $GetGradientShade($Steel, "5") -> Returns value of $Steel_Gradient5
+!function $GetGradientShade($token, $shade="0")
+  !return %get_variable_value($token + "_Gradient" + $shade)
+!endfunction
+
+' This is probably deprecated
+!function $COLOR($txt, $color)
+  !return "<color:" + $color + ">" + $txt + "</color>"
+!endfunction
+
+' So is this
+!function $BG($txt, $color)
+    !return "<back:" + $color + ">" + $txt + "</back>"
+!endfunction
+
+@enduml

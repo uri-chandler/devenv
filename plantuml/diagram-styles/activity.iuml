@@ -1,0 +1,24 @@
+@startuml Activity Diagram Styles
+
+<style>
+activityDiagram {
+    root {
+        fontStyle normal
+        fontSize 11
+        lineThickness 0.8
+        lineColor $Gray2
+        roundCorner 5
+    }
+
+    arrow {
+        lineThickness 0.8
+        lineColor $Steel6
+    }
+
+    partition {
+        ' fontStyle bold
+    }
+}
+</style>
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Green Colors
+
+!$Green0 = "#F6FBF6"
+!$Green1 = "#E6F2E6"
+!$Green2 = "#CCEBCC"
+!$Green3 = "#99D699"
+!$Green4 = "#66C266"
+!$Green5 = "#33AD33"
+!$Green6 = "#1B5E20"
+
+!$Green_Gradient0 = $Green0 + "/" + %substr($Green1, 1)
+!$Green_Gradient1 = $Green1 + "/" + %substr($Green3, 1)
+!$Green_Gradient2 = $Green2 + "/" + %substr($Green4, 1)
+!$Green_Gradient3 = $Green3 + "/" + %substr($Green5, 1)
+
+!function $GREEN($txt)
+  !return "<color:" + $Green5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

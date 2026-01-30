@@ -1,0 +1,20 @@
+@startuml Indigo Colors
+
+!$Indigo0 = "#F6F7FD"
+!$Indigo1 = "#E8EAF6"
+!$Indigo2 = "#C5CAE9"
+!$Indigo3 = "#9FA8DA"
+!$Indigo4 = "#5C6BC0"
+!$Indigo5 = "#283593"
+!$Indigo6 = "#1A237E"
+
+!$Indigo_Gradient0 = $Indigo0 + "/" + %substr($Indigo1, 1)
+!$Indigo_Gradient1 = $Indigo1 + "/" + %substr($Indigo3, 1)
+!$Indigo_Gradient2 = $Indigo2 + "/" + %substr($Indigo4, 1)
+!$Indigo_Gradient3 = $Indigo3 + "/" + %substr($Indigo5, 1)
+
+!function $INDIGO($txt)
+  !return "<color:" + $Indigo5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

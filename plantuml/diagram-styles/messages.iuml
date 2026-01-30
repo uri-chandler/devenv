@@ -1,0 +1,265 @@
+@startuml Messages
+
+' !include <material7.4.47/all.puml>
+
+' ' Shared helper to render a colored MDI sprite with a bold label
+' !unquoted function $MdiMsgLine($icon, $color, $label, $txt, $scale="1")
+'   !return $MdiSprite($icon, $color, $scale) + " <b>" + $label + "</b> <<" + $txt + ">>"
+' !endfunction
+
+' ' Shared helper for status-style messages (no chevrons around text)
+' !unquoted function $MdiStatusLine($icon, $color, $label, $txt, $scale="1")
+'   !return $MdiSprite($icon, $color, $scale) + " <b>" + $label + "</b> " + $txt
+' !endfunction
+
+' =========================================
+' HTTP METHODS
+' =========================================
+!function $HTTP_GET($txt)
+  !return $MdiMsgLine(mdiArrowRight, $Blue5, "GET", $txt)
+!endfunction
+
+!function $HTTP_POST($txt)
+  !return $MdiMsgLine(mdiArrowDownBold, $Green5, "POST", $txt)
+!endfunction
+
+!function $HTTP_PUT($txt)
+  !return $MdiMsgLine(mdiArrowUpBold, $Orange5, "PUT", $txt)
+!endfunction
+
+!function $HTTP_DELETE($txt)
+  !return $MdiMsgLine(mdiDelete, $Red5, "DELETE", $txt)
+!endfunction
+
+!function $HTTP_PATCH($txt)
+  !return $MdiMsgLine(mdiWrench, $Purple5, "PATCH", $txt)
+!endfunction
+
+' =========================================
+' HTTP RESPONSES
+' =========================================
+!function $HTTP_200($txt="OK")
+  !return $MdiStatusLine(mdiCheckCircle, $Olive5, "200", $txt)
+!endfunction
+
+!function $HTTP_201($txt="Created")
+  !return $MdiStatusLine(mdiCheckDecagram, $Olive5, "201", $txt)
+!endfunction
+
+!function $HTTP_400($txt="Bad Request")
+  !return $MdiStatusLine(mdiAlertCircle, $Orange5, "400", $txt)
+!endfunction
+
+!function $HTTP_401($txt="Unauthorized")
+  !return $MdiStatusLine(mdiLock, $Crimson5, "401", $txt)
+!endfunction
+
+!function $HTTP_403($txt="Forbidden")
+  !return $MdiStatusLine(mdiShieldLock, $Crimson5, "403", $txt)
+!endfunction
+
+!function $HTTP_404($txt="Not Found")
+  !return $MdiStatusLine(mdiMagnifyClose, $Orange5, "404", $txt)
+!endfunction
+
+!function $HTTP_500($txt="Internal Server Error")
+  !return $MdiStatusLine(mdiAlertOctagon, $Red5, "500", $txt)
+!endfunction
+
+!function $HTTP_503($txt="Service Unavailable")
+  !return $MdiStatusLine(mdiAlertDecagram, $Red5, "503", $txt)
+!endfunction
+
+' =========================================
+' FILE OPERATIONS
+' =========================================
+!function $Upload($txt)
+  !return $MdiMsgLine(mdiUpload, $Slate5, "Upload", $txt)
+!endfunction
+
+!function $Download($txt)
+  !return $MdiMsgLine(mdiDownload, $Blue5, "Download", $txt)
+!endfunction
+
+!function $FileDelete($txt)
+  !return $MdiMsgLine(mdiFileRemove, $Red5, "Delete", $txt)
+!endfunction
+
+!function $FileRead($txt)
+  !return $MdiMsgLine(mdiFileEye, $Slate5, "Read", $txt)
+!endfunction
+
+' =========================================
+' DATABASE OPERATIONS
+' =========================================
+!function $DB_Query($txt)
+  !return $MdiMsgLine(mdiDatabaseSearch, $Blue5, "Query", $txt)
+!endfunction
+
+!function $DB_Insert($txt)
+  !return $MdiMsgLine(mdiDatabasePlus, $Green5, "Insert", $txt)
+!endfunction
+
+!function $DB_Update($txt)
+  !return $MdiMsgLine(mdiDatabaseEdit, $Orange5, "Update", $txt)
+!endfunction
+
+!function $DB_Delete($txt)
+  !return $MdiMsgLine(mdiDatabaseRemove, $Red5, "Delete", $txt)
+!endfunction
+
+!function $DB_Transaction($txt="Transaction")
+  !return $MdiStatusLine(mdiDatabaseCog, $Purple5, $txt, "")
+!endfunction
+
+' =========================================
+' EVENTS & MESSAGING
+' =========================================
+!function $Publish($txt)
+  !return $MdiMsgLine(mdiSend, $Orange5, "Publish", $txt)
+!endfunction
+
+!function $Subscribe($txt)
+  !return $MdiMsgLine(mdiInboxArrowDown, $Blue5, "Subscribe", $txt)
+!endfunction
+
+!function $Emit($txt)
+  !return $MdiMsgLine(mdiArrowRightBold, $Orange5, "Emit", $txt)
+!endfunction
+
+!function $Receive($txt)
+  !return $MdiMsgLine(mdiArrowLeftBold, $Blue5, "Receive", $txt)
+!endfunction
+
+!function $Queue($txt)
+  !return $MdiMsgLine(mdiFormatListBulleted, $Steel5, "Queue", $txt)
+!endfunction
+
+' =========================================
+' TIMED EVENTS
+' =========================================
+!function $Trigger($txt)
+  !return $MdiMsgLine(mdiFlash, $Orange5, "Trigger", $txt)
+!endfunction
+
+!function $Timeout($txt)
+  !return $MdiMsgLine(mdiClockAlert, $Red5, "Timeout", $txt)
+!endfunction
+
+!function $Schedule($txt)
+  !return $MdiMsgLine(mdiCalendarClock, $Blue5, "Schedule", $txt)
+!endfunction
+
+' =========================================
+' CODE & DATA FORMATS
+' =========================================
+!function $JSON($txt)
+  !return $MdiMsgLine(mdiCodeBraces, $Indigo5, "JSON", $txt)
+!endfunction
+
+!function $XML($txt)
+  !return $MdiMsgLine(mdiXml, $Indigo5, "XML", $txt)
+!endfunction
+
+!function $Code($txt)
+  !return $MdiMsgLine(mdiCodeTags, $Slate5, "Code", $txt)
+!endfunction
+
+' =========================================
+' LOGS & STREAMS
+' =========================================
+!function $Log($txt)
+  !return $MdiMsgLine(mdiFileDocumentOutline, $Steel5, "Log", $txt)
+!endfunction
+
+!function $Stream($txt)
+  !return $MdiMsgLine(mdiAccessPointNetwork, $Teal5, "Stream", $txt)
+!endfunction
+
+!function $Trace($txt)
+  !return $MdiMsgLine(mdiTimelineOutline, $Steel5, "Trace", $txt)
+!endfunction
+
+' =========================================
+' AUTHENTICATION & SECURITY
+' =========================================
+!function $Authenticate($txt)
+  !return $MdiMsgLine(mdiAccountCheck, $Crimson5, "Authenticate", $txt)
+!endfunction
+
+!function $Authorize($txt)
+  !return $MdiMsgLine(mdiShieldCheck, $Crimson5, "Authorize", $txt)
+!endfunction
+
+!function $Token($txt)
+  !return $MdiMsgLine(mdiKeyVariant, $Crimson5, "Token", $txt)
+!endfunction
+
+!function $Validate($txt)
+  !return $MdiMsgLine(mdiCheckCircleOutline, $Olive5, "Validate", $txt)
+!endfunction
+
+' =========================================
+' CACHE OPERATIONS
+' =========================================
+!function $Cache_Get($txt)
+  !return $MdiMsgLine(mdiReload, $Blue5, "Cache Get", $txt)
+!endfunction
+
+!function $Cache_Set($txt)
+  !return $MdiMsgLine(mdiContentSave, $Green5, "Cache Set", $txt)
+!endfunction
+
+!function $Cache_Invalidate($txt)
+  !return $MdiMsgLine(mdiCloseOctagon, $Red5, "Cache Invalidate", $txt)
+!endfunction
+
+' =========================================
+' NOTIFICATIONS
+' =========================================
+!function $Email($txt)
+  !return $MdiMsgLine(mdiEmail, $Blue5, "Email", $txt)
+!endfunction
+
+!function $SMS($txt)
+  !return $MdiMsgLine(mdiMessageText, $Green5, "SMS", $txt)
+!endfunction
+
+!function $Push($txt)
+  !return $MdiMsgLine(mdiBell, $Orange5, "Push", $txt)
+!endfunction
+
+' =========================================
+' SEARCH OPERATIONS
+' =========================================
+!function $Search($txt)
+  !return $MdiMsgLine(mdiMagnify, $Blue5, "Search", $txt)
+!endfunction
+
+!function $Index($txt)
+  !return $MdiMsgLine(mdiViewList, $Steel5, "Index", $txt)
+!endfunction
+
+' =========================================
+' TRANSFORMATIONS
+' =========================================
+!function $Parse($txt)
+  !return $MdiMsgLine(mdiCodeBrackets, $Purple5, "Parse", $txt)
+!endfunction
+
+!function $Serialize($txt)
+  !return $MdiMsgLine(mdiCodeJson, $Purple5, "Serialize", $txt)
+!endfunction
+
+' =========================================
+' ERROR HANDLING
+' =========================================
+!function $Error($txt)
+  !return $MdiMsgLine(mdiAlertCircle, $Red5, "Error", $txt)
+!endfunction
+
+!function $Exception($txt)
+  !return $MdiMsgLine(mdiAlertDecagram, $Crimson5, "Exception", $txt)
+!endfunction
+
+@enduml

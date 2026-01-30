@@ -1,0 +1,20 @@
+@startuml Blue Colors
+
+!$Blue0 = "#F7FAFF"
+!$Blue1 = "#eaf2fb"
+!$Blue2 = "#d9e6f2"
+!$Blue3 = "#a9c5eb"
+!$Blue4 = "#7fa2e1"
+!$Blue5 = "#557fd0"
+!$Blue6 = "#1E3A8A"
+
+!$Blue_Gradient0 = $Blue0 + "/" + %substr($Blue1, 1)
+!$Blue_Gradient1 = $Blue1 + "/" + %substr($Blue3, 1)
+!$Blue_Gradient2 = $Blue2 + "/" + %substr($Blue4, 1)
+!$Blue_Gradient3 = $Blue3 + "/" + %substr($Blue5, 1)
+
+!function $BLUE($txt)
+  !return "<color:" + $Blue5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,76 +1,122 @@
-!define Blue1 #eaf2fb
-!define Blue2 #d9e6f2
-!define Blue3 #a9c5eb
-!define Blue4 #7fa2e1
-!define Blue5 #557fd0
-!define BLUE(txt) <color:Blue5>txt</color>
+@startuml Skinparams
 
-!define Red1 #FFE5E5
-!define Red2 #FFCCCC
-!define Red3 #FF9999
-!define Red4 #FF6666
-!define Red5 #FF3333
-!define RED(txt) <color:Red5>txt</color>
+!include colors/colors.iuml
+!include themes/light-professional.iuml
+!include diagram-styles/diagram-styles.iuml
+!include typography/typography.iuml
 
-!define Green1 #E6F2E6
-!define Green2 #CCEBCC
-!define Green3 #99D699
-!define Green4 #66C266
-!define Green5 #33AD33
-!define GREEN(txt) <color:Green5>txt</color>
-
-!define Orange1 #FFF0E5
-!define Orange2 #FFE6CC
-!define Orange3 #FFCC99
-!define Orange4 #FFB266
-!define Orange5 #FF9933
-!define ORANGE(txt) <color:Orange5>txt</color>
-
-!define Gray1 #F2F2F2
-!define Gray2 #D9D9D9
-!define Gray3 #BFBFBF
-!define Gray4 #A6A6A6
-!define Gray5 #8C8C8C
-!define GRAY(txt) <color:Gray5>txt</color>
-
-!define Purple1 #EDE5FF
-!define Purple2 #D9CCFF
-!define Purple3 #B399FF
-!define Purple4 #8C66FF
-!define Purple5 #6633FF
-!define PURPLE(txt) <color:Purple5>txt</color>
-
-!define Yellow1 #FFFDE5
-!define Yellow2 #FFFACC
-!define Yellow3 #FFF599
-!define Yellow4 #FFF266
-!define Yellow5 #FFEF33
-!define YELLOW(txt) <color:Yellow5>txt</color>
-
-'Returns text styled as a code snippet
-!define CODE(txt) <font:Courier><color:Gray5>txt</color></font>
-
-'Returns text styled as a code snippet, allowing for color customization
-!define CODEC(txt, clr) <font:Courier><color:clr>txt</color></font>
-
-'Returns a green "<<OK>>" text styled as a code snippet
-!define OK() CODEC(<<OK>>, Green5)
-
-'Returns a colored text styled
-!define COLOR(txt, clr) <color:clr>txt</color>
-
-'Returns bold test
-!define BOLD(txt) <b>txt</b>
+scale 0.95
 
 'Common styles for all diagrams
-!define SYSTEM(txt) BOLD(CODE(<<txt>>))
-!define ARTIFACT(txt) BOLD(CODEC(<<txt>>, Blue5))
+' !define SYSTEM(txt) BOLD(CODE(<<txt>>))
+' !define ARTIFACT(txt) BOLD(CODEC(<<txt>>, Blue5))
 
-skinparam backgroundColor transparent
-skinparam SequenceLifeLineBackgroundColor Blue2
-skinparam SequenceArrowColor Blue4
-skinparam LegendBackgroundColor Yellow1
-skinparam SequenceDividerBackgroundColor Yellow1
-skinparam ActivityBackgroundColor Yellow1
-skinparam UsecaseBackgroundColor Yellow1
-skinparam ActorStyle awesome
+
+' <style>
+' rectangle {
+'     .dotted {
+'         LineStyle 1
+'         LineColor Gray5
+'     }
+   
+'     Title {
+'         ' Aligns the text/icon to the left
+'         HorizontalAlignment left
+
+'         ' Adds a little breathing room from the left border
+'         Margin 5
+'     }
+' }
+' </style>
+
+'
+'
+' AWS
+'
+' !include <awslib/AWSCommon>
+' !include <awslib/AWSSimplified>
+
+' !foreach $item in %splitstr('General~SecurityIdentityCompliance~NetworkingContentDelivery~DeveloperTools~Database~Storage~ApplicationIntegration~Compute~Groups~MediaServices~MachineLearning~InternetOfThings~Analytics~', '~')
+'     !include <awslib/$item/all.puml>
+' !endfor
+
+' !definelong AWSEntityColoring(e_stereo)
+' skinparam rectangle<<e_stereo>> {
+'     BackgroundColor $AWS_BG_COLOR
+'     BorderColor transparent
+'     Shadowing false
+'     TitleHorizontalAlignment center
+' }
+' skinparam ParticipantBackgroundColor<<e_stereo>> $AWS_BG_COLOR
+' skinparam SequenceParticipantBorderThickness<<e_stereo>> 0
+' !enddefinelong
+
+' !definelong AWSEntity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo)
+' rectangle "$AWSImg(e_sprite)\ne_label" <<e_stereo>> as e_alias
+' !enddefinelong
+
+' !define Lambda(alias, label)    Lambda(alias, CODEC(<<label>>, Blue4),)
+' !define API_GW(alias, label)    APIGateway(alias, CODEC(<<label>>, Blue4),)
+' !define WAF(alias, label)       WAF(alias, CODEC(<<label>>, Blue4),)
+' !define DynamoDB(alias, label)  DynamoDB(alias, CODEC(<<label>>, Blue4),)
+' !define RDS(alias, label)       RDS(alias, CODEC(<<label>>, Blue4),)
+'
+'
+'
+
+
+'
+' Auto-numbered "STEP" circles from 1 to 99 as sprites
+'
+' 1. Helper function to generate the SVG string with the number
+!function $ONE_DIGIT_STEP($n, $color="#3d88d3ff")
+!return '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><circle cx="9" cy="9" r="9" fill="' + $color + '" /><text x="6" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="10" style="text-decoration: none;">' + $n + '</text></svg>'
+!endfunction
+
+!function $TWO_DIGIT_STEP($n, $color="#3d88d3ff")
+!return '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><circle cx="9" cy="9" r="9" fill="' + $color + '" /><text x="2" y="12" fill="#FFFFFF" font-family="sans-serif" font-size="10" style="text-decoration: none;">' + $n + '</text></svg>'
+!endfunction
+
+' 2. Loop to define sprites 1 through 20 automatically
+!$i = 0
+!while $i <= 9
+  !$name = "$Callout_" + $i
+  !$svg = $ONE_DIGIT_STEP($i)
+  sprite $name $svg
+  !$i = $i + 1
+!endwhile
+
+' 3. Loop to define sprites 10 through 99 automatically
+!$i = 10
+!while $i <= 99
+  !$name = "$Callout_" + $i
+  !$svg = $TWO_DIGIT_STEP($i)
+  sprite $name $svg
+  !$i = $i + 1
+!endwhile
+
+' 3. The Accessor Function you asked for
+!$_NEXT_STEP = 0
+!function STEP()
+  !$_NEXT_STEP = $_NEXT_STEP + 1
+  !return "<$Callout_" + $_NEXT_STEP + ">"
+!endfunction
+'
+'
+
+
+'
+' Common skinparams
+' skinparam backgroundColor transparent
+' skinparam SequenceLifeLineBackgroundColor Blue2
+' skinparam SequenceArrowColor Blue4
+' skinparam LegendBackgroundColor Yellow1
+' skinparam SequenceDividerBackgroundColor Yellow1
+' skinparam ActivityBackgroundColor Yellow1
+' skinparam UsecaseBackgroundColor Yellow1
+' skinparam ActorStyle awesome
+
+' skinparam ActorBackgroundColor          Gray1
+' skinparam ComponentBackgroundColor      Gray1
+
+@enduml

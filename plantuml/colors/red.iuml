@@ -1,0 +1,20 @@
+@startuml Red Colors
+
+!$Red0 = "#FFF9F9"
+!$Red1 = "#FFE5E5"
+!$Red2 = "#FFCCCC"
+!$Red3 = "#FF9999"
+!$Red4 = "#FF6666"
+!$Red5 = "#FF3333"
+!$Red6 = "#7F1D1D"
+
+!$Red_Gradient0 = $Red0 + "/" + %substr($Red1, 1)
+!$Red_Gradient1 = $Red1 + "/" + %substr($Red3, 1)
+!$Red_Gradient2 = $Red2 + "/" + %substr($Red4, 1)
+!$Red_Gradient3 = $Red3 + "/" + %substr($Red5, 1)
+
+!function $RED($txt)
+  !return "<color:" + $Red5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml Styles
+
+!function $B($t)
+    !return "<b>" + $t + "</b>"
+!endfunction
+
+!function $I($t)
+    !return "<i>" + $t + "</i>"
+!endfunction
+
+!function $U($t)
+    !return "<u>" + $t + "</u>"
+!endfunction
+
+@enduml

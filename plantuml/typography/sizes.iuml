@@ -1,0 +1,34 @@
+@startuml Text Sizes
+
+!$SZ_XS   = 10
+!$SZ_SM   = 11
+!$SZ_BASE = 13
+!$SZ_LG   = 16
+!$SZ_XL   = 20
+!$SZ_2XL  = 26
+
+!function $TEXT_XS($t)
+    !return "<size:" + $SZ_XS + ">" + $t + "</size>"
+!endfunction
+
+!function $TEXT_SM($t)
+    !return "<size:" + $SZ_SM + ">" + $t + "</size>"
+!endfunction
+
+!function $TEXT_BASE($t)
+    !return "<size:" + $SZ_BASE + ">" + $t + "</size>"
+!endfunction
+
+!function $TEXT_LG($t)
+    !return "<size:" + $SZ_LG + ">" + $t + "</size>"
+!endfunction
+
+!function $TEXT_XL($t)
+    !return "<size:" + $SZ_XL + ">" + $t + "</size>"
+!endfunction
+
+!function $TEXT_2XL($t)
+    !return "<size:" + $SZ_2XL + ">" + $t + "</size>"
+!endfunction
+
+@enduml

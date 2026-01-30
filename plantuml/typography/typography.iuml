@@ -1,0 +1,52 @@
+@startuml Typography
+
+!include typography/fonts.iuml
+!include typography/sizes.iuml
+!include typography/styles.iuml
+
+
+
+' =========================================
+' 3. SEMANTIC COMPONENTS (The "Bootstrap")
+' =========================================
+
+' H1: Huge, Bold, Primary Color (Optional)
+!function $H1($t, $color="")
+  !$style = $TEXT_XL($HEADER_FONT($t))
+  !if ($color != "")
+    !return $COLOR($style, $color)
+  !endif
+  !return $style
+!endfunction
+
+' H2: Large, Bold
+!function $H2($t)
+  !return $B($HEADER_FONT($TEXT_LG($t)))
+!endfunction
+
+' SUBTITLE: Small, Italic, Gray (Hardcoded gray or pass a color)
+!function $SUBTITLE($t)
+  !return $I($TEXT_SM($COLOR($t, "#666666")))
+!endfunction
+
+' CODE_BLOCK: Monospace, Gray Background, Dark Text
+!function $CODE($t)
+  !return $MONO($BG($COLOR(" " + $t + " ", "#333333"), "#EEEEEE"))
+!endfunction
+
+' BADGE: White text, colored background (Rounded look simulated with spaces)
+!function $BADGE($t, $color)
+  !return $B($TEXT_XS($BG($COLOR(" " + $t + " ", "#FFFFFF"), $color)))
+!endfunction
+
+' TITLE: Combines H1 and optional SUBTITLE within title block
+!procedure $TITLE($main, $sub="")
+  title
+    $H1($main, $Blue5)
+    !if ($sub != "")
+      $SUBTITLE($sub)
+    !endif
+  end title
+!endprocedure
+
+@enduml

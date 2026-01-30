@@ -1,0 +1,19 @@
+@startuml Slate Colors
+
+!$Slate0 = "#F7FAFC"
+!$Slate1 = "#ECEFF1"
+!$Slate2 = "#CFD8DC"
+!$Slate3 = "#90A4AE"
+!$Slate4 = "#546E7A"
+!$Slate5 = "#37474F"
+!$Slate6 = "#263238"
+
+!$Slate_Gradient1 = $Slate1 + "/" + %substr($Slate3, 1)
+!$Slate_Gradient2 = $Slate2 + "/" + %substr($Slate4, 1)
+!$Slate_Gradient3 = $Slate3 + "/" + %substr($Slate5, 1)
+
+!function $SLATE($txt)
+  !return "<color:" + $Slate5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Steel Colors
+
+!$Steel0 = "#F5F8FF"
+!$Steel1 = "#E3F2FD"
+!$Steel2 = "#BBDEFB"
+!$Steel3 = "#90CAF9"
+!$Steel4 = "#42A5F5"
+!$Steel5 = "#1565C0"
+!$Steel6 = "#0D47A1"
+
+!$Steel_Gradient0 = $Steel0 + "/" + %substr($Steel1, 1)
+!$Steel_Gradient1 = $Steel1 + "/" + %substr($Steel3, 1)
+!$Steel_Gradient2 = $Steel2 + "/" + %substr($Steel4, 1)
+!$Steel_Gradient3 = $Steel3 + "/" + %substr($Steel5, 1)
+
+!function $STEEL($txt)
+  !return "<color:" + $Steel5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

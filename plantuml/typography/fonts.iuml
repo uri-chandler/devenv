@@ -1,0 +1,19 @@
+@startuml Fonts
+
+!$FONT_MAIN   = "Segoe UI"
+!$FONT_CODE   = "Consolas"
+!$FONT_HEADER = "BlinkMacSystemFont"
+
+!function $MONO($t)
+    !return "<font:" + $FONT_CODE + ">" + $t + "</font>"
+!endfunction
+
+!function $SANS($t)
+    !return "<font:" + $FONT_MAIN + ">" + $t + "</font>"
+!endfunction
+
+!function $HEADER_FONT($t)
+    !return "<font:" + $FONT_HEADER + ">" + $t + "</font>"
+!endfunction
+
+@enduml

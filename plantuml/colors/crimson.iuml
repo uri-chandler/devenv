@@ -1,0 +1,20 @@
+@startuml Crimson Colors
+
+!$Crimson0 = "#FFF9FA"
+!$Crimson1 = "#FFEBEE"
+!$Crimson2 = "#FFCDD2"
+!$Crimson3 = "#E57373"
+!$Crimson4 = "#D32F2F"
+!$Crimson5 = "#B71C1C"
+!$Crimson6 = "#7F0000"
+
+!$Crimson_Gradient0 = $Crimson0 + "/" + %substr($Crimson1, 1)
+!$Crimson_Gradient1 = $Crimson1 + "/" + %substr($Crimson3, 1)
+!$Crimson_Gradient2 = $Crimson2 + "/" + %substr($Crimson4, 1)
+!$Crimson_Gradient3 = $Crimson3 + "/" + %substr($Crimson5, 1)
+
+!function $CRIMSON($txt)
+  !return "<color:" + $Crimson5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

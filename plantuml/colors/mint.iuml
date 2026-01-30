@@ -1,0 +1,20 @@
+@startuml Mint Colors
+
+!$Mint0 = "#F3FBFA"
+!$Mint1 = "#E0F2F1"
+!$Mint2 = "#B2DFDB"
+!$Mint3 = "#80CBC4"
+!$Mint4 = "#26A69A"
+!$Mint5 = "#00695C"
+!$Mint6 = "#004D40"
+
+!$Mint_Gradient0 = $Mint0 + "/" + %substr($Mint1, 1)
+!$Mint_Gradient1 = $Mint1 + "/" + %substr($Mint3, 1)
+!$Mint_Gradient2 = $Mint2 + "/" + %substr($Mint4, 1)
+!$Mint_Gradient3 = $Mint3 + "/" + %substr($Mint5, 1)
+
+!function $MINT($txt)
+  !return "<color:" + $Mint5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -10,5 +10,13 @@
     "markdown-preview-enhanced.enableScriptExecution": true,
     "markdown-preview-enhanced.plantumlServer": "http://localhost:9876/svg",
     "markdown-preview-enhanced.revealjsTheme": "league.css",
-    "markdown-preview-enhanced.enablePreviewZenMode": true
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:9876/svg",
+    "redhat.telemetry.enabled": false,
+    "swaggerViewer.previewInBrowser": true,
+    "markdown-preview-enhanced.previewTheme": "medium.css",
+    "git.openRepositoryInParentFolders": "never",
+    "chat.agent.maxRequests": 200,
+    "chat.viewSessions.orientation": "stacked"
 }

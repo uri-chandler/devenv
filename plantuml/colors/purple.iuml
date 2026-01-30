@@ -1,0 +1,20 @@
+@startuml Purple Colors
+
+!$Purple0 = "#F8F3FF"
+!$Purple1 = "#EDE5FF"
+!$Purple2 = "#D9CCFF"
+!$Purple3 = "#B399FF"
+!$Purple4 = "#8C66FF"
+!$Purple5 = "#6633FF"
+!$Purple6 = "#4A148C"
+
+!$Purple_Gradient0 = $Purple0 + "/" + %substr($Purple1, 1)
+!$Purple_Gradient1 = $Purple1 + "/" + %substr($Purple3, 1)
+!$Purple_Gradient2 = $Purple2 + "/" + %substr($Purple4, 1)
+!$Purple_Gradient3 = $Purple3 + "/" + %substr($Purple5, 1)
+
+!function $PURPLE($txt)
+  !return "<color:" + $Purple5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

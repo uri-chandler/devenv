@@ -1,0 +1,20 @@
+@startuml Brown Colors
+
+!$Brown0 = "#FAF6F3"
+!$Brown1 = "#EFEBE9"
+!$Brown2 = "#D7CCC8"
+!$Brown3 = "#BCAAA4"
+!$Brown4 = "#8D6E63"
+!$Brown5 = "#5D4037"
+!$Brown6 = "#3E2723"
+
+!$Brown_Gradient0 = $Brown0 + "/" + %substr($Brown1, 1)
+!$Brown_Gradient1 = $Brown1 + "/" + %substr($Brown3, 1)
+!$Brown_Gradient2 = $Brown2 + "/" + %substr($Brown4, 1)
+!$Brown_Gradient3 = $Brown3 + "/" + %substr($Brown5, 1)
+
+!function $BROWN($txt)
+  !return "<color:" + $Brown5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Yellow Colors
+
+!$Yellow0 = "#FFFDF4"
+!$Yellow1 = "#FFFDE5"
+!$Yellow2 = "#FFFACC"
+!$Yellow3 = "#FFF599"
+!$Yellow4 = "#FFF266"
+!$Yellow5 = "#FFEF33"
+!$Yellow6 = "#7F6000"
+
+!$Yellow_Gradient0 = $Yellow0 + "/" + %substr($Yellow1, 1)
+!$Yellow_Gradient1 = $Yellow1 + "/" + %substr($Yellow3, 1)
+!$Yellow_Gradient2 = $Yellow2 + "/" + %substr($Yellow4, 1)
+!$Yellow_Gradient3 = $Yellow3 + "/" + %substr($Yellow5, 1)
+
+!function $YELLOW($txt)
+  !return "<color:" + $Yellow5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Teal Colors
+
+!$Teal0 = "#F2FDFF"
+!$Teal1 = "#E0F7FA"
+!$Teal2 = "#B2EBF2"
+!$Teal3 = "#4DD0E1"
+!$Teal4 = "#00ACC1"
+!$Teal5 = "#00838F"
+!$Teal6 = "#004D40"
+
+!$Teal_Gradient0 = $Teal0 + "/" + %substr($Teal1, 1)
+!$Teal_Gradient1 = $Teal1 + "/" + %substr($Teal3, 1)
+!$Teal_Gradient2 = $Teal2 + "/" + %substr($Teal4, 1)
+!$Teal_Gradient3 = $Teal3 + "/" + %substr($Teal5, 1)
+
+!function $TEAL($txt)
+  !return "<color:" + $Teal5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

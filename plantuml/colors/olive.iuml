@@ -1,0 +1,20 @@
+@startuml Olive Colors
+
+!$Olive0 = "#F9FDF5"
+!$Olive1 = "#F1F8E9"
+!$Olive2 = "#DCEDC8"
+!$Olive3 = "#AED581"
+!$Olive4 = "#7CB342"
+!$Olive5 = "#33691E"
+!$Olive6 = "#1B5E20"
+
+!$Olive_Gradient0 = $Olive0 + "/" + %substr($Olive1, 1)
+!$Olive_Gradient1 = $Olive1 + "/" + %substr($Olive3, 1)
+!$Olive_Gradient2 = $Olive2 + "/" + %substr($Olive4, 1)
+!$Olive_Gradient3 = $Olive3 + "/" + %substr($Olive5, 1)
+
+!function $OLIVE($txt)
+  !return "<color:" + $Olive5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml Amber Colors
+
+!$Amber0 = "#FFFDF3"
+!$Amber1 = "#FFF8E1"
+!$Amber2 = "#FFECB3"
+!$Amber3 = "#FFD54F"
+!$Amber4 = "#FFB300"
+!$Amber5 = "#FF6F00"
+!$Amber6 = "#E65100"
+
+!$Amber_Gradient0 = $Amber0 + "/" + %substr($Amber1, 1)
+!$Amber_Gradient1 = $Amber1 + "/" + %substr($Amber3, 1)
+!$Amber_Gradient2 = $Amber2 + "/" + %substr($Amber4, 1)
+!$Amber_Gradient3 = $Amber3 + "/" + %substr($Amber5, 1)
+
+!function $AMBER($txt)
+  !return "<color:" + $Amber5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml

@@ -1,0 +1,341 @@
+@startuml Sequence Diagram Styles
+
+<style>
+sequenceDiagram {
+    root {
+        fontStyle normal
+        roundCorner 5
+    }
+
+    element {
+        backgroundColor $PrimaryBackgroundColor
+        lineColor $PrimaryBorderColor
+    }
+
+    arrow {
+        lineColor $SecondaryLineColor
+    }
+
+    lifeLine {
+        lineStyle 5
+        lineColor $SecondaryBorderColor
+    }
+
+    destroy {
+        lineColor $StatusCriticalLineColor
+    }
+
+    activationBox {
+        backgroundColor $SecondaryBackgroundColor
+        lineColor $SecondaryBorderColor
+    }
+
+    separator {
+        lineThickness 1
+        fontColor $AlternateFontColor
+        lineColor $AlternateLineColor
+        backgroundColor $AlternateBackgroundColor
+    }
+    
+    box {
+        lineThickness 0.8
+        
+    }
+
+    group {
+        lineThickness 0.8
+    }
+
+    groupHeader {
+        fontStyle bold
+        fontName Verdana
+    }
+}
+</style>
+
+' This skin param hasn't been migrated to the new `<style>` usage yet
+' in PlantUML, so we're setting it as a skinparam for now.
+skinparam SequenceActorStyle awesome
+
+!procedure $SeqLayer($label="Default", $textColor=$LayerDefaultFontColor, $bgColor=$LayerDefaultBackgroundColor)
+    box "\n<color:$textColor>  <<$label Layer>>\t </color>" $bgColor
+!endprocedure
+
+!procedure $SecuritySeqLayer($label)
+    $SeqLayer($label, $LayerSecurityFontColor, $LayerSecurityBackgroundColor)
+!endprocedure
+
+!procedure $InternalSeqLayer($label)
+    $SeqLayer($label, $LayerInternalFontColor, $LayerInternalBackgroundColor)
+!endprocedure
+
+!procedure $ExternalSeqLayer($label)
+    $SeqLayer($label, $LayerExternalFontColor, $LayerExternalBackgroundColor)
+!endprocedure
+
+!procedure $PresentationSeqLayer($label)
+    $SeqLayer($label, $LayerPresentationFontColor, $LayerPresentationBackgroundColor)
+!endprocedure
+
+!procedure $NetworkSeqLayer($label)
+    $SeqLayer($label, $LayerNetworkFontColor, $LayerNetworkBackgroundColor)
+!endprocedure
+
+!procedure $BusinessSeqLayer($label)
+    $SeqLayer($label, $LayerBusinessFontColor, $LayerBusinessBackgroundColor)
+!endprocedure
+
+!procedure $MessagingSeqLayer($label)
+    $SeqLayer($label, $LayerMessagingFontColor, $LayerMessagingBackgroundColor)
+!endprocedure
+
+!procedure $DataSeqLayer($label)
+    $SeqLayer($label, $LayerDataFontColor, $LayerDataBackgroundColor)
+!endprocedure
+
+!procedure $ObservabilitySeqLayer($label)
+    $SeqLayer($label, $LayerObservabilityFontColor, $LayerObservabilityBackgroundColor)
+!endprocedure
+
+!procedure $SeqLayerEnd()
+    end box
+!endprocedure
+
+
+
+' Group Styles
+!procedure $ErrorSeqGroup($label="Error")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusErrorLineColor
+                backgroundColor $StatusErrorBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusErrorLineColor
+                fontColor $StatusErrorFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusErrorLineColor
+            }
+
+            arrow {
+                lineColor $StatusErrorLineColor
+                fontColor $StatusErrorArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $SuccessSeqGroup($label="Success")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusSuccessLineColor
+                backgroundColor $StatusSuccessBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusSuccessLineColor
+                fontColor $StatusSuccessFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusSuccessLineColor
+            }
+
+            arrow {
+                lineColor $StatusSuccessLineColor
+                fontColor $StatusSuccessArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $WarningSeqGroup($label="Warning")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusWarningLineColor
+                backgroundColor $StatusWarningBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusWarningLineColor
+                fontColor $StatusWarningFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusWarningLineColor
+            }
+
+            arrow {
+                lineColor $StatusWarningLineColor
+                fontColor $StatusWarningArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $InfoSeqGroup($label="Info")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusInfoLineColor
+                backgroundColor $StatusInfoBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusInfoLineColor
+                fontColor $StatusInfoFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusInfoLineColor
+            }
+
+            arrow {
+                lineColor $StatusInfoLineColor
+                fontColor $StatusInfoArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $CriticalSeqGroup($label="Critical")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusCriticalLineColor
+                backgroundColor $StatusCriticalBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusCriticalLineColor
+                fontColor $StatusCriticalFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusCriticalLineColor
+            }
+
+            arrow {
+                lineColor $StatusCriticalLineColor
+                fontColor $StatusCriticalArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $InternalSeqGroup($label="Internal")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusInternalLineColor
+                backgroundColor $StatusInternalBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusInternalLineColor
+                fontColor $StatusInternalFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusInternalLineColor
+            }
+
+            arrow {
+                lineColor $StatusInternalLineColor
+                fontColor $StatusInternalArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $LoopSeqGroup($label="Loop")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusLoopLineColor
+                backgroundColor $StatusLoopBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusLoopLineColor
+                fontColor $StatusLoopFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusLoopLineColor
+            }
+
+            arrow {
+                lineColor $StatusLoopLineColor
+                fontColor $StatusLoopArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $SeqGroup($label="Group")
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $StatusDefaultLineColor
+                backgroundColor $StatusDefaultBackgroundColor
+            }
+
+            groupHeader {
+                lineColor $StatusDefaultLineColor
+                fontColor $StatusDefaultFontColor
+                'Using line color on the header for better contrast
+                backgroundColor $StatusDefaultLineColor
+            }
+
+            arrow {
+                lineColor $StatusDefaultLineColor
+                fontColor $StatusDefaultArrowColor
+            }
+        }
+    </style>
+    group $label
+!endprocedure
+
+!procedure $GroupEnd()
+    end
+    <style>
+        sequenceDiagram {
+            group {
+                lineColor $Blue5
+                backgroundColor $Blue2
+            }
+
+            groupHeader {
+                lineColor $Blue5
+                fontColor $Blue1
+                fontStyle bold
+                fontName Verdana
+                backgroundColor $Blue5
+            }
+
+            arrow {
+                lineColor $Blue4
+                fontColor black
+            }
+        }
+    </style>
+!endprocedure
+
+
+
+!$_IS_FIRST_PHASE = 1
+!procedure $Phase($name, $txt = "")
+    !if ($_IS_FIRST_PHASE == 1)
+        !$_IS_FIRST_PHASE = 0
+        ...
+        == $name Phase ==
+    !else
+        ...
+        ... $txt ...
+        ...
+        == $name Phase ==
+    !endif
+!endprocedure
+
+
+@enduml

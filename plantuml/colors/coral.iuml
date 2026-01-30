@@ -1,0 +1,20 @@
+@startuml Coral Colors
+
+!$Coral0 = "#FFF6F4"
+!$Coral1 = "#FBE9E7"
+!$Coral2 = "#FFCCBC"
+!$Coral3 = "#FF8A65"
+!$Coral4 = "#F4511E"
+!$Coral5 = "#BF360C"
+!$Coral6 = "#6D1B00"
+
+!$Coral_Gradient0 = $Coral0 + "/" + %substr($Coral1, 1)
+!$Coral_Gradient1 = $Coral1 + "/" + %substr($Coral3, 1)
+!$Coral_Gradient2 = $Coral2 + "/" + %substr($Coral4, 1)
+!$Coral_Gradient3 = $Coral3 + "/" + %substr($Coral5, 1)
+
+!function $CORAL($txt)
+  !return "<color:" + $Coral5 + ">" + $txt + "</color>"
+!endfunction
+
+@enduml
